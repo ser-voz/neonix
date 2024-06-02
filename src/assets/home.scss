@@ -1,0 +1,42 @@
+
+.user-head {
+    --line-opacity: .2;
+    --inset: 2.5px;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    .img {
+        min-width: var(--avatar-size);
+        height: var(--avatar-size);
+        border: 2px solid rgba(var(--neon), 1);
+        border-radius: 50%;
+    }
+    .info {
+        display: flex;
+        width: calc(100% - (var(--avatar-size) + 95px));
+        flex-direction: column;
+        .status {
+            line-height: 1;
+            margin-top: 5px;
+            color: rgba(var(--neon), 1);
+        }
+        .name {
+            font-size: var(--name-size);
+            line-height: 1;
+            width: 100%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            flex: 1;
+        }
+    }
+    .level {
+        min-width: 75px;
+        font-size: var(--lvl-size);
+        line-height: 1;
+        align-self: center;
+        text-align: right;
+    }
+}
+

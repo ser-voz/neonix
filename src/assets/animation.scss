@@ -1,0 +1,21 @@
+@keyframes progressAnimation {
+    0% { width: 0% }
+    80% { width: 85% }
+    100% { width: 100% }
+}
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg) scale(0.99);
+        filter: hue-rotate(-50deg) ;
+    }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.25s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}

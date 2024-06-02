@@ -1,0 +1,226 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/digital-7-mono');
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+:root {
+    --background: hsl(0 0% 5%);
+    --background2: linear-gradient(to bottom, #131313, #000);
+    --default-padding: 12px;
+    --line-size: 3px;
+    --radius: 8px;
+    --name-size: clamp(20px, 6vmin, 30px);
+    --lvl-size: 20px;
+    --card-bg1: #161616;
+    --card-bg2: #262626;
+    --drop-shadow-size: 7px;
+    --text-color: #ccc;
+    --score-size: clamp(48px, calc(var(--screen-height) / 60 + 10vw), 55px);
+    --time-size: clamp(40px, calc(var(--screen-height) / 40 + 10vw), 60px);
+    --main-button: clamp(200px, calc(var(--screen-height) / 2.8), 240px);
+    --g-size: clamp(120px, calc(var(--screen-height) / 40 + 1vmin), 140px);
+    --avatar-size: clamp(40px, 12vmin, 60px);
+    --h1-size: clamp(60px, 5vmin, 70px);
+    --screen-height: calc(100dvh - 84px);
+}
+
+.red, .red ~ .toasty {
+    --neon: 255, 81, 97;
+    --neon-glow: #D30302;
+    --drop-shadow: drop-shadow(0px 0px 1px var(--neon-glow)) drop-shadow(0px 0px var(--drop-shadow-size) var(--neon-glow));
+    --text-shadow: 0 0 1vw var(--neon-glow);
+}
+.green, .green ~ .toasty  {
+    --neon: 0, 254, 155;
+    --neon-glow: #02c435;
+    --drop-shadow: drop-shadow(0px 0px 1px var(--neon-glow)) drop-shadow(0px 0px var(--drop-shadow-size) var(--neon-glow));
+    --text-shadow: 0 0 1vw var(--neon-glow);
+}
+.yellow, .yellow ~ .toasty {
+    --neon: 255, 219, 78;
+    --neon-glow: #b48505;
+    --drop-shadow: drop-shadow(0px 0px 1px var(--neon-glow)) drop-shadow(0px 0px var(--drop-shadow-size) var(--neon-glow));
+    --text-shadow: 0 0 1vw var(--neon-glow);
+}
+.blue, .blue ~ .toasty {
+    --neon: 45,217,254;
+    --neon-glow: #00a3d5;
+    --drop-shadow: drop-shadow(0px 0px 1px var(--neon-glow)) drop-shadow(0px 0px var(--drop-shadow-size) var(--neon-glow));
+    --text-shadow: 0 0 1vw var(--neon-glow);
+}
+
+/*@media (prefers-color-scheme: dark) {*/
+/*    :root {*/
+/*        --color-background: var(--vt-c-black);*/
+/*        --color-background-soft: var(--vt-c-black-soft);*/
+/*        --color-background-mute: var(--vt-c-black-mute);*/
+
+/*        --color-border: var(--vt-c-divider-dark-2);*/
+/*        --color-border-hover: var(--vt-c-divider-dark-1);*/
+
+/*        --color-heading: var(--vt-c-text-dark-1);*/
+/*        --color-text: var(--vt-c-text-dark-2);*/
+/*    }*/
+/*}*/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.d-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+ol, ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    font-size: var(--h1-size);
+    color: rgba(var(--neon), 1);
+    text-shadow: var(--text-shadow);
+}
+h2 {
+    color: rgba(var(--neon), 1);
+    text-shadow: var(--text-shadow);
+}
+
+button {
+    border: none;
+    outline: none;
+}
+
+.button {
+    font-family: "Tilt Neon", sans-serif;
+    text-transform: uppercase;
+}
+
+body {
+    color: #fff;
+    background: var(--background);
+    //transition: color 0.5s, background-color 0.5s;
+    line-height: 1.4;
+    /*font-family: "Raleway", sans-serif;*/
+    //font-family: "Urbanist", sans-serif;
+    font-family: "Tilt Neon", sans-serif;
+    font-size: 16px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+    max-width: 1023px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+main {
+    padding: 15px 15px 8px;
+    height: var(--screen-height);
+    > div {
+        color: var(--text-color);
+    }
+}
+
+.progress {
+    position: fixed;
+    height: 100dvh;
+    width: 100%;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #141414;
+    &-container {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        font-family: 'Arial', sans-serif!important;
+        margin-top: -30px;
+        span {
+            margin-left: 10px;
+            margin-bottom: 5px;
+            color: #ccc;
+        }
+    }
+    &-wrap {
+        padding: 6px;
+        background: #000000;
+        border-radius: 30px;
+        width: 100%;
+    }
+    &-bar {
+        height: 18px;
+        background-image: linear-gradient(to right, #10dca0, #3cba92, #30dd8a, #10dca0);
+        box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.4);
+        border-radius: 30px;
+        animation: progressAnimation 1.5s;
+    }
+}
+
+.neon-card {
+    --line-opacity: .15;
+    --inset: 2px;
+    position: relative;
+    border-radius: var(--radius);
+    background: linear-gradient(360deg, transparent, transparent 40%, rgba(var(--neon), var(--line-opacity))), linear-gradient(rgba(var(--neon), var(--line-opacity)), rgba(var(--neon), var(--line-opacity)));
+    padding: calc(var(--default-padding) + var(--inset));
+    &:before,
+    &:after {
+        content: " ";
+        position: absolute;
+        inset: var(--inset);
+        background: linear-gradient(#161616, #262626);
+        border-radius: inherit;
+        z-index: 0;
+    }
+    &:before {
+        background: linear-gradient(45deg, transparent, transparent 40%, rgba(var(--neon), var(--line-opacity)));
+        filter: blur(0);
+    }
+    > * {
+        z-index: 1;
+        position: relative;
+    }
+    &.item {
+        width: 100%;
+        min-height: 200px;
+    }
+    &.button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:active {
+            --line-opacity: .5;
+            --drop-shadow-size: 2px;
+            color: rgba(var(--neon), 1);
+            text-shadow: var(--text-shadow);
+            filter: var(--drop-shadow);
+            svg {
+                filter: drop-shadow(0px 0px 1px var(--neon-glow)) drop-shadow(0px 0px 3px var(--neon-glow));
+                path {
+                    fill: rgba(var(--neon), 1);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,53 @@
+.frens {
+    height: 100%;
+    overflow: auto;
+    &-invite {
+        display: flex;
+        gap: 10px;
+        margin: 15px 0;
+        justify-content: center;
+        .share {
+            text-decoration: none;
+            color: rgba(var(--neon), 0.6);
+            font-size: 22px;
+        }
+        .copy {
+            min-width: 60px;
+            svg {
+                path {
+                    fill: rgba(var(--neon), 0.6);
+                }
+            }
+        }
+    }
+    &-table {
+        margin-top: 30px;
+        p {
+            margin-bottom: 5px;
+        }
+    }
+    .table {
+        border-collapse: collapse;
+        width: 100%;
+        tr {
+            &:first-child {
+                td {
+                    padding-top: 0;
+                }
+            }
+            &:last-child {
+                td {
+                    padding-bottom: 0;
+                    border-bottom: none;
+                }
+            }
+        }
+        td {
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(var(--neon), .1);
+            &:last-child {
+                text-align: right;
+            }
+        }
+    }
+}
